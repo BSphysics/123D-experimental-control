@@ -179,6 +179,13 @@ for idx in tqdm(range(0,14)):    # In each iteration, first ELL14 takes a regula
   
 ELLser.close()
 ARDser.close()
+
+
+# Beep
+winsound.Beep(1000, 300)  # 1000 Hz for 300 ms
+time.sleep(0.1)           # Short pause between tones
+winsound.Beep(600, 300)   # 600 Hz for 300 ms
+
             
 
 #%%
