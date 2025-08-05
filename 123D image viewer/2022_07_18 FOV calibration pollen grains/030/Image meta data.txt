@@ -1,0 +1,4 @@
+numSlices = 1
+scanZoomFactor = 3
+SacqState = 'grab'
+trigAcqEdge = 'falling'

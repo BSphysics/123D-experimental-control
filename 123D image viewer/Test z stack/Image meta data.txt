@@ -1,0 +1,5 @@
+numSlices = 13scanZoomFactor = 3
+SacqState = 'grab'
+trigAcqEdge = 'falling'
+framesPerSlice = 2stackZStepSize = 50
+S
