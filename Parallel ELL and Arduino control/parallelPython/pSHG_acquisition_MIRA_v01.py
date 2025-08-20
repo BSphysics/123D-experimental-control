@@ -15,6 +15,7 @@ import serial
 import time
 from tqdm import tqdm
 import pandas as pd
+import sys
 
 fullFileName = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' # Make sure this is the correct calibration file!!
 dfHWP = pd.read_excel(fullFileName, usecols='C')
@@ -62,12 +63,17 @@ if(ELLser.in_waiting > 0):
     serialString = ELLser.readline().decode('ascii')   # Serial message back from ELL14            
     print(serialString)
 
+if serialString != '0IN0E1140051420211501016800023000\r\n':
+    sys.exit("Unexpected response. Terminating script.")
 
 ELLser.write(('2in' + '\n').encode('utf-8'))    #request information about the second ELL14
 time.sleep(0.5)
 if(ELLser.in_waiting > 0):
     serialString = ELLser.readline().decode('ascii')                
     print(serialString)
+    
+if serialString != '2IN0E1140064920211501016800023000\r\n':
+    sys.exit("Unexpected response. Terminating script.")
 
 ELLser.write(('0ho' + '\n').encode('utf-8'))    # Home first ELL14
 time.sleep(1)
