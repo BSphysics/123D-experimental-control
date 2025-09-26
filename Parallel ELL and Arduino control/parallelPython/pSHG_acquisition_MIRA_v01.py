@@ -181,7 +181,7 @@ for idx in tqdm(range(0,14)):    # In each iteration, first ELL14 takes a regula
     DI02 = ARDser.readline().decode('ascii')
     # print(DI02) 
 
-    time.sleep(0.5) #IMAGE ACQUISTION occurs during this timestep before the loop iterates 
+    time.sleep(5.5) #IMAGE ACQUISTION occurs during this timestep before the loop iterates 
   
 ELLser.close()
 ARDser.close()
