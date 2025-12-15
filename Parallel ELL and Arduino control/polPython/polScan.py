@@ -28,8 +28,8 @@ from matplotlib import patches
 
 # calibrationFile = r'D:\!User files\Ben\2024\Polarisation testing\HWP QWP Pol angles 20 percent ellip for testing using polScan REFORMATTED.xlsx'
 # calibrationFile = r'D:\!User files\Ben\2024\Polarisation testing\2024_03_13 after HWP and QWP linear pol sequence 15deg intervals REFORMATTED.xlsx'
-# calibrationFile = r'D:\!User files\Ben\2024\Polarisation testing\2024_02_27 Rotating ellipse pSHG sequences\pSHG sequence for 00pc ellipticity.xlsx'
-calibrationFile = r'D:\!User files\Ben\2023\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' 
+calibrationFile = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' 
+#calibrationFile = r'D:\!User files\Ben\2023\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' 
 
 degrees = np.pi/180
 serialString = ""  # declare a string variable
@@ -48,7 +48,7 @@ dfLPA = pd.read_excel(calibrationFile, usecols='E')
 from datetime import datetime
 today = datetime.today()
 datestamp = str(today.year)+ '_' + str(today.month)+ '_' + str(today.day)+ '_' + str(today.hour).zfill(2) + str(today.minute).zfill(2)
-saveDir = r'D:\!User files\Ben\2024\Polarisation measurements' + r'\ ' + datestamp
+saveDir = r'D:\2_user_data\Ben\Polarisation measurements' + r'\ ' + datestamp
 
 data_path = Path(saveDir)
 if not os.path.exists(data_path):
@@ -74,7 +74,7 @@ for polStepNumber in range(0,n):
     expectedEllipseAngles.append(expectedEllipseAngle)
     
     ELLser = serial.Serial(         # Open a serial connection to the ELL14. Note you can use Windows device manager to move the USB serial adapter to a different COM port if you need
-        port='COM7',
+        port='COM8',
         baudrate=9600,
         parity=serial.PARITY_NONE,
         stopbits=serial.STOPBITS_ONE,

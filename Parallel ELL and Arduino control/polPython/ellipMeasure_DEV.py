@@ -23,7 +23,7 @@ degrees = np.pi/180
 serialString = ""  # declare a string variable
 
 ELLser = serial.Serial(         # Open a serial connection to the ELL14. Note you can use Windows device manager to move the USB serial adapter to a different COM port if you need
-    port='COM7',
+    port='COM8',
     baudrate=9600,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
@@ -139,7 +139,7 @@ def model_f(theta,p1,p2,p3,p4):
     
   return (p1*np.cos(theta*degrees-p3))**2 + (p2*np.sin(theta*degrees-p3))**2 +p4
 
-popt, pcov = curve_fit(model_f, polariserAngles, powers, bounds = ([0,0,0,0] , [np.max(powers)*1.5 , np.min(powers)*1.5, 1*np.pi, 0.01]))
+popt, pcov = curve_fit(model_f, polariserAngles, powers, bounds = ([0,0,0,0] , [np.max(powers)*1.5 , 0.02+np.min(powers)*1.5, 1*np.pi, 0.01]))
 
 Emax, Emin, alpha, offset = popt
 fittingAngles = np.arange(0,180,1)
