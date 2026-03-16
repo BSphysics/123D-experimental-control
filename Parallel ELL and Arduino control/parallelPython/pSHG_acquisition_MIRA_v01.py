@@ -116,6 +116,7 @@ for idx in range(0,14):
 
 QWPMoveArray = []
 for idx in range(0,14):   
+
     QWPdeg = int(dfQWP.values[idx+2])    
     QWPabMove = '2ma'+ str(degreestoHex(QWPdeg).zfill(8))
     QWPMoveArray.append(QWPabMove)
