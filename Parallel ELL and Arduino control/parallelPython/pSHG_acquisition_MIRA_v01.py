@@ -135,8 +135,7 @@ for idx in tqdm(range(0,14)):    # In each iteration, first ELL14 takes a regula
         serialString = ELLser.readline().decode('ascii')                
         pos0 = round(serialtoDeg(serialString))   
         print(' \n  Target position of HWP = ' + str(round(serialtoDeg(HWPMoveArray[idx]))) + ' deg')
-        print(' Current position of HWP = ' + str(pos0) + ' deg' + '\n')
-        
+        print(' Current position of HWP = ' + str(pos0) + ' deg' + '\n')     
         target = round(serialtoDeg(HWPMoveArray[idx]))
         actual = round(pos0)
         
