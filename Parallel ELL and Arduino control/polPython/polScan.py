@@ -39,6 +39,9 @@ polEllipseAngle = []
 expectedEllipseAngles = []
 Emaxs = []
 Emins = []
+fitParams   = []   # [Emax, Emin, alpha, offset] per step
+fitCovs     = []   # full 4x4 covariance per step
+rawScans    = []   # (polariserAngles, powers) per step, for offline refitting
 
 import pandas as pd
 dfHWP = pd.read_excel(calibrationFile, usecols='C')
@@ -188,6 +191,10 @@ for polStepNumber in range(0,n):
     
     # popt, pcov = curve_fit(model_f, polariserAngles, powers, bounds = ([0,0,0,0],[5,5,2*np.pi,0.01]))
     popt, pcov = curve_fit(model_f, polariserAngles, powers, bounds = ([0,0,0,0] , [np.max(powers)*1.5 , np.min(powers)*1.5+1e-2, 1*np.pi, 0.01]))
+
+    fitParams.append(popt.copy())
+    fitCovs.append(pcov.copy())
+    rawScans.append((np.asarray(polariserAngles, dtype=float), np.asarray(powers, dtype=float)))
     
     Emax, Emin, alpha, offset = popt
     
@@ -246,7 +253,7 @@ for polStepNumber in range(0,n):
     
     ellipAngle = alpha*180/np.pi
     polEllipseAngle.append(ellipAngle)
-#%%
+#%%  SAVE BLOCK
 plt.close('all')
 plt.figure()
 plt.plot(np.asarray(percentageEllipticity), 'ro')
@@ -258,6 +265,11 @@ plt.figure()
 plt.plot(polEllipseAngle - np.asarray(expectedEllipseAngles) %90, 'go')
 plt.title('Difference between expected vs measured ellipse angles')
 np.save(saveDir + '/alphas', polEllipseAngle)
+
+np.save(saveDir + '/fitParams', np.asarray(fitParams))          # shape (n, 4)
+np.save(saveDir + '/fitCovs',   np.asarray(fitCovs))            # shape (n, 4, 4)
+np.save(saveDir + '/expectedEllipseAngles', np.asarray(expectedEllipseAngles))
+np.savez(saveDir + '/rawScans', polariserAngles=np.asarray(polariserAngles, dtype=float), powers=np.asarray([p for (_, p) in rawScans], dtype=float))  # (n, n_angles)
 #%%
 fig, axs = plt.subplots(2,7, figsize=(30, 12), facecolor='w', edgecolor='k')
 fig.subplots_adjust(hspace = .5, wspace=.1)
