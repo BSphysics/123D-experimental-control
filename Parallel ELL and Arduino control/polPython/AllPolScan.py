@@ -38,14 +38,33 @@ HWPangles = []
 QWPangles = []
 
 from datetime import datetime
-today = datetime.today()
-datestamp = str(today.year)+ '_' + str(today.month)+ '_' + str(today.day)+ '_' + str(today.hour).zfill(2) + str(today.minute).zfill(2)
-saveDir = r'D:\!User files\Ben\2024\Polarisation measurements ' + datestamp + r'__AllPolScan data'
 
-data_path = Path(saveDir)
-if not os.path.exists(data_path):
-    os.mkdir(data_path)
-    
+today = datetime.today()
+
+# Folder for all measurements taken today
+date_folder = (
+    f"Polarisation measurements "
+    f"{today.year}_{today.month:02d}_{today.day:02d}"
+)
+
+# Subfolder for this specific run
+time_folder = (
+    f"{today.hour:02d}{today.minute:02d}"
+    f"__AllPolScan data"
+)
+
+base_dir = Path(r"D:\2_user_data\Ben")
+
+# Daily folder
+daily_path = base_dir / date_folder
+daily_path.mkdir(parents=True, exist_ok=True)
+
+# Run-specific folder
+data_path = daily_path / time_folder
+data_path.mkdir(exist_ok=True)
+
+saveDir = str(data_path)
+
 def degreestoHex(deg):          # Quick fn to convert degrees of rotation into the number of pulses needed to actuate this rotation (number in hexadecimal) 
     # first convert degrees to pulses
     pulses = int(deg/360*143360)    # # 143360 is number of pulses needed for 360 degrees of rotation on the ELL14
@@ -67,7 +86,7 @@ def model_f(theta,p1,p2,p3,p4):
 #---------------------------------------------------Initialise Linear polariser communication---------------------
     
 ELLLinPolser = serial.Serial(         # Open a serial connection to the ELL14. Note you can use Windows device manager to move the USB serial adapter to a different COM port if you need
-        port='COM7',
+        port='COM8',
         baudrate=9600,
         parity=serial.PARITY_NONE,
         stopbits=serial.STOPBITS_ONE,
@@ -301,7 +320,7 @@ for HWPidx in range(0, len(HWPMoveArray)):
                 print(' Current position of linear polariser = ' + str(pos0) + ' deg' + '\n')  
                 
         # popt, pcov = curve_fit(model_f, polariserAngles, powers, bounds = ([0,0,0,0],[5,5,2*np.pi,0.01]))
-        popt, pcov = curve_fit(model_f, polariserAngles, powers, bounds = ([0,0,0,0] , [np.max(powers)*1.5 , np.min(powers)*1.5, 1*np.pi, 0.01]))
+        popt, pcov = curve_fit(model_f, polariserAngles, powers, bounds = ([0,0,0,0] , [np.max(powers)*1.5 , np.min(powers)*1.5 + 1e-2, 1*np.pi, 0.01]))
         Emax, Emin, alpha, offset = popt
         
         if Emax > Emin:

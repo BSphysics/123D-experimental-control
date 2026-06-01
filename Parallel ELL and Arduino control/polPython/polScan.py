@@ -26,10 +26,9 @@ from setConstantPolarisation import setPol
 from matplotlib import patches
 
 
-# calibrationFile = r'D:\!User files\Ben\2024\Polarisation testing\HWP QWP Pol angles 20 percent ellip for testing using polScan REFORMATTED.xlsx'
-# calibrationFile = r'D:\!User files\Ben\2024\Polarisation testing\2024_03_13 after HWP and QWP linear pol sequence 15deg intervals REFORMATTED.xlsx'
-calibrationFile = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' 
-#calibrationFile = r'D:\!User files\Ben\2023\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' 
+
+#calibrationFile = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' 
+calibrationFile = r'D:\1_software\Experimental control software\Synthetic birefringence\delta_waves=0.3_fast_axis=60.xlsx' 
 
 degrees = np.pi/180
 serialString = ""  # declare a string variable
