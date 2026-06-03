@@ -28,7 +28,8 @@ from matplotlib import patches
 
 
 #calibrationFile = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' 
-calibrationFile = r'D:\1_software\Experimental control software\Synthetic birefringence\delta_waves=0.3_fast_axis=60.xlsx' 
+# calibrationFile = r'D:\1_software\Experimental control software\Synthetic birefringence\rotating_linear_pol.xlsx' 
+calibrationFile = r'D:\1_software\Experimental control software\Synthetic birefringence\Fast axis 45\delta_waves=0.500_fast_axis=45.xlsx' 
 
 degrees = np.pi/180
 serialString = ""  # declare a string variable
@@ -49,10 +50,33 @@ dfLPA = pd.read_excel(calibrationFile, usecols='E')
 
 from datetime import datetime
 today = datetime.today()
-datestamp = str(today.year)+ '_' + str(today.month)+ '_' + str(today.day)+ '_' + str(today.hour).zfill(2) + str(today.minute).zfill(2)
-saveDir = r'D:\2_user_data\Ben\Polarisation measurements' + r'\ ' + datestamp
+
+# Folder for all measurements taken today
+date_folder = (
+    f"Polarisation measurements "
+    f"{today.year}_{today.month:02d}_{today.day:02d}"
+)
+
+# Subfolder for this specific run
+time_folder = (
+    f"{today.hour:02d}{today.minute:02d}"
+    f"__PolScan data" + " using " + os.path.splitext(os.path.basename(calibrationFile))[0]
+)
+
+base_dir = Path(r"D:\2_user_data\Ben")
+
+# Daily folder
+daily_path = base_dir / date_folder
+daily_path.mkdir(parents=True, exist_ok=True)
+
+# Run-specific folder
+data_path = daily_path / time_folder
+data_path.mkdir(exist_ok=True)
+
+saveDir = str(data_path)
 
 data_path = Path(saveDir)
+
 if not os.path.exists(data_path):
     os.mkdir(data_path)
     
