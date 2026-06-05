@@ -27,9 +27,9 @@ from matplotlib import patches
 
 
 
-#calibrationFile = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' 
+calibrationFile = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' 
 # calibrationFile = r'D:\1_software\Experimental control software\Synthetic birefringence\rotating_linear_pol.xlsx' 
-calibrationFile = r'D:\1_software\Experimental control software\Synthetic birefringence\Fast axis 45\delta_waves=0.500_fast_axis=45.xlsx' 
+# calibrationFile = r'D:\1_software\Experimental control software\Synthetic birefringence\Fast axis 60\delta_waves=0.15_fast_axis=60.xlsx' 
 
 degrees = np.pi/180
 serialString = ""  # declare a string variable

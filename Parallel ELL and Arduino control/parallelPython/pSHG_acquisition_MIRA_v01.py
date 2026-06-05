@@ -19,8 +19,8 @@ import sys
 
 
 #fullFileName = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' # Make sure this is the correct calibration file!!
-#fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\delta_waves=0.50_fast_axis=60.xlsx'
-fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\rotating_linear_pol.xlsx'
+fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\Fast axis 165\delta_waves=0.250_fast_axis=165.xlsx'
+# fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\rotating_linear_pol.xlsx'
 
 dfHWP = pd.read_excel(fullFileName, usecols='C')
 dfQWP = pd.read_excel(fullFileName, usecols='D')
