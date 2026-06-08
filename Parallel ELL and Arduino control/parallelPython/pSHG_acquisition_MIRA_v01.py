@@ -18,8 +18,8 @@ import pandas as pd
 import sys
 
 
-#fullFileName = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' # Make sure this is the correct calibration file!!
-fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\Fast axis 165\delta_waves=0.250_fast_axis=165.xlsx'
+fullFileName = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' # Make sure this is the correct calibration file!!
+# fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\Fast axis 165\delta_waves=0.250_fast_axis=165.xlsx'
 # fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\rotating_linear_pol.xlsx'
 
 dfHWP = pd.read_excel(fullFileName, usecols='C')
@@ -46,6 +46,25 @@ ARDser = serial.Serial(         # Open a serial connection to the Arduino
     baudrate=9600
 )
 ARDser.reset_input_buffer()
+
+def wait_for_frame_done(timeout=10):
+    """
+    Blocks until Arduino sends FRAME_DONE.
+    Adds timeout so you never hang forever.
+    """
+    start = time.time()
+
+    while True:
+        if ARDser.in_waiting > 0:
+            msg = ARDser.readline().decode('ascii').strip()
+
+            if msg == "FRAME_DONE":
+                return
+
+        if time.time() - start > timeout:
+            raise TimeoutError("No FRAME_DONE received from Arduino")
+
+        time.sleep(0.001)  # small CPU-friendly delay
 
 def degreestoHex(deg):          # Quick fn to convert degrees of rotation into the number of pulses needed to actuate this rotation (number in hexadecimal) 
     # first convert degrees to pulses
@@ -171,7 +190,8 @@ for idx in tqdm(range(0,14)):    # In each iteration, first ELL14 takes a regula
             print('pSHG sequence ERROR - RESTART SPYDER')
             print('pSHG sequence ERROR - RESTART SPYDER')
         
-    ARDser.write('on'.encode())     #Serial communication to Arduino - after both ELL14s have moved, turn on Arduino digital output to act as a trigger pulse for other parts of the experiment
+    ARDser.write('on'.encode())
+   # Serial commun#ication to Arduino - after both ELL14s have moved, turn on Arduino digital output to act as a trigger pulse for other parts of the experiment
     time.sleep(0.2)
     led = ARDser.readline().decode('ascii')     #Serial communications back from the Arduino (not really very important)
     # print(led)
@@ -180,12 +200,24 @@ for idx in tqdm(range(0,14)):    # In each iteration, first ELL14 takes a regula
     time.sleep(0.1)
     ARDser.write('off'.encode())    # Turn off Arduino digital output (to create a TTL pulse)
     time.sleep(0.2)
+ 
     led  =ARDser.readline().decode('ascii')
     # print(led)
     DI02 = ARDser.readline().decode('ascii')
-    # print(DI02) 
+    print(DI02) 
 
     time.sleep(5.5) #IMAGE ACQUISTION occurs during this timestep before the loop iterates 
+    # Trigger acquisition
+    # ARDser.write('on'.encode())
+    
+    # time.sleep(0.05)
+    # # ARDser.reset_input_buffer()   
+    
+    # # Stop trigger pulse
+    # ARDser.write('off'.encode())
+    
+    # # Wait for microscope frame completion
+    # wait_for_frame_done()
   
 ELLser.close()
 ARDser.close()
