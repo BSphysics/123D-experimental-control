@@ -18,8 +18,9 @@ import pandas as pd
 import sys
 
 
-fullFileName = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' # Make sure this is the correct calibration file!!
+# fullFileName = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' # Make sure this is the correct calibration file!!
 # fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\Fast axis 165\delta_waves=0.250_fast_axis=165.xlsx'
+fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\delta 0.25\delta_waves=0.250_fast_axis=165.xlsx'
 # fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\rotating_linear_pol.xlsx'
 
 dfHWP = pd.read_excel(fullFileName, usecols='C')
@@ -36,6 +37,7 @@ ELLser = serial.Serial(         # Open a serial connection to the ELL14. Note yo
     baudrate=9600,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
+    timeout=0.2
 )
 ELLser.reset_input_buffer()
 ELLser.flushInput()             # Adding these flushes massively helped with the Serial port sending the wrong values and messing up the whole sequence
@@ -63,6 +65,30 @@ def wait_for_frame_done(timeout=10):
 
         time.sleep(0.001)  # small CPU-friendly delay
 
+def move_ell(addr, deg, timeout=3.0):
+
+    ELLser.write(
+        f"{addr}ma{degreestoHex(deg).zfill(8)}\n".encode('utf-8')
+    )
+
+    t0 = time.time()
+
+    while time.time() - t0 < timeout:
+
+        raw = ELLser.readline()
+
+        if raw:
+            print(raw)
+
+        line = raw.decode('ascii', errors='ignore')
+
+        if line.startswith(f"{addr}PO"):
+            return serialtoDeg(line)
+
+    raise TimeoutError(
+        f"ELL{addr} move to {deg} did not complete"
+    )
+    
 def degreestoHex(deg):          # Quick fn to convert degrees of rotation into the number of pulses needed to actuate this rotation (number in hexadecimal) 
     # first convert degrees to pulses
     pulses = int(deg/360*143360)    # # 143360 is number of pulses needed for 360 degrees of rotation on the ELL14
@@ -71,11 +97,18 @@ def degreestoHex(deg):          # Quick fn to convert degrees of rotation into t
     hexPulses = hex(pulses).upper()  #  Hex characters have to be capitals
     return hexPulses[2:]
 
-# jogStepSize = degreestoHex(8)   #Set jog step size (in degrees) here
+import re
 
-def serialtoDeg(serialString): #converts hex numbers from stage into degrees
-    pos = round((int(serialString.strip()[3:],16)/143360*360),2)        # 143360 is number of pulses needed for 360 degrees of rotation on the ELL14
-    return pos
+def serialtoDeg(serialString):
+
+    m = re.search(r'([0-9A-F]{8})', serialString)
+
+    if not m:
+        raise ValueError(f"Bad ELL packet: {repr(serialString)}")
+
+    hexpos = m.group(1)
+
+    return round(int(hexpos,16)/143360*360,2)
 
 ELLser.write(('0in' + '\n').encode('utf-8'))    # request information about the first ELL14
 time.sleep(0.5)
@@ -143,70 +176,80 @@ for idx in range(0,14):
 
 ELLser.flushInput()     # Adding these flushes massively helped with the Serial port sending the wrong values and messing up the whole sequence
 ELLser.flushOutput()    # Adding these flushes massively helped with the Serial port sending the wrong values and messing up the whole sequence
-    
+
+time.sleep(1)
+def beep_error(msg):
+    for _ in range(3):
+        winsound.Beep(frequency, duration)
+    print('\n'.join(['pSHG sequence ERROR - ' + msg] * 3))
+
+POS_TOL = 1.0          # deg
+REARM_DELAY = 0.4      # nominal head-start before first trigger attempt
+ATTEMPT_TIMEOUT = 10  # MUST exceed one frame period (0.7 s) by a clear margin
+MAX_TRIES = 4
+
+def trigger_and_wait(idx):
+    """Fire trigger; retry only if NO frame scanned (safe—dropped triggers scan nothing)."""
+    for attempt in range(1, MAX_TRIES + 1):
+        
+        ARDser.write(b'on\n'); time.sleep(0.05); ARDser.write(b'off\n')
+        try:
+            wait_for_frame_done(timeout=ATTEMPT_TIMEOUT)
+            return True
+        except TimeoutError:
+            print(f"Frame {idx+1}: trigger dropped (attempt {attempt}/{MAX_TRIES}), re-arming")
+            time.sleep(REARM_DELAY)
+    beep_error(f"Frame {idx+1} FAILED after {MAX_TRIES} tries")
+    return False
+
 print('Loop starts \n\n')
 time.sleep(1)
-for idx in tqdm(range(0,14)):    # In each iteration, first ELL14 takes a regular sized jog step, and second moves to an impirically determined absolute position
-   
-    ELLser.write((HWPMoveArray[idx]).encode('utf-8'))     # Move to absolute position
-    time.sleep(1.0)
-    # time.sleep(0.1)
-    if(ELLser.in_waiting > 0):
-        serialString = ELLser.readline().decode('ascii')                
-        pos0 = round(serialtoDeg(serialString))   
-        print(' \n  Target position of HWP = ' + str(round(serialtoDeg(HWPMoveArray[idx]))) + ' deg')
-        print(' Current position of HWP = ' + str(pos0) + ' deg' + '\n')     
-        target = round(serialtoDeg(HWPMoveArray[idx]))
-        actual = round(pos0)
-        
-        if target != actual:
-            winsound.Beep(frequency, duration)
-            winsound.Beep(frequency, duration)
-            winsound.Beep(frequency, duration)
-            
-            print('pSHG sequence ERROR - RESTART SPYDER')
-            print('pSHG sequence ERROR - RESTART SPYDER')
-            print('pSHG sequence ERROR - RESTART SPYDER')
-    
-    ELLser.write((QWPMoveArray[idx]).encode('utf-8'))     # Move to absolute position
-    time.sleep(1.0)
-    # time.sleep(0.1)
-    if(ELLser.in_waiting > 0):
-        serialString = ELLser.readline().decode('ascii')                
-        pos2 = round(serialtoDeg(serialString))   
-        print(' \n  Target position of QWP = ' + str(round(serialtoDeg(QWPMoveArray[idx]))) + ' deg')
-        print(' Current position of QWP = ' + str(pos2) + ' deg' + '\n')
-        
-        target = round(serialtoDeg(QWPMoveArray[idx]))
-        actual = round(pos2)
-        
-        if target != actual:
-            winsound.Beep(frequency, duration)
-            winsound.Beep(frequency, duration)
-            winsound.Beep(frequency, duration)
-            
-            print('pSHG sequence ERROR - RESTART SPYDER')
-            print('pSHG sequence ERROR - RESTART SPYDER')
-            print('pSHG sequence ERROR - RESTART SPYDER')
-        
-        ARDser.write('on'.encode())
-    # Serial commun#ication to Arduino - after both ELL14s have moved, turn on Arduino digital output to act as a trigger pulse for other parts of the experiment
-        time.sleep(0.2)
-        led = ARDser.readline().decode('ascii')     #Serial communications back from the Arduino (not really very important)
-        # print(led)
-        DI02 = ARDser.readline().decode('ascii')
-        # print(DI02)    
-        time.sleep(0.1)
-        ARDser.write('off'.encode())    # Turn off Arduino digital output (to create a TTL pulse)
-        time.sleep(0.2)
-  
-        led=ARDser.readline().decode('ascii')
-        # print(led)
-        DI02 = ARDser.readline().decode('ascii')
-        print(DI02) 
- 
-        time.sleep(5.5) #IMAGE ACQUISTION occurs during this timestep before the loop iterates 
-  
+
+ARDser.reset_input_buffer()
+
+for idx in tqdm(range(14)):
+
+    HWPdeg = int(dfHWP.values[idx + 2])
+    QWPdeg = int(dfQWP.values[idx + 2])
+
+    # -------------------------
+    # Move HWP
+    # -------------------------
+    try:
+        pos0 = move_ell('0', HWPdeg)
+
+        if abs(pos0 - HWPdeg) > POS_TOL:
+            beep_error(
+                f'HWP at {pos0} deg, expected {HWPdeg} '
+                f'(frame {idx + 1})'
+            )
+
+    except TimeoutError as e:
+        beep_error(str(e))
+        pos0 = None
+
+    # -------------------------
+    # Move QWP
+    # -------------------------
+    try:
+        pos2 = move_ell('2', QWPdeg)
+
+        if abs(pos2 - QWPdeg) > POS_TOL:
+            beep_error(
+                f'QWP at {pos2} deg, expected {QWPdeg} '
+                f'(frame {idx + 1})'
+            )
+
+    except TimeoutError as e:
+        beep_error(str(e))
+        pos2 = None
+
+    # -------------------------
+    # Trigger acquisition
+    # -------------------------
+    time.sleep(REARM_DELAY)
+    trigger_and_wait(idx)
+
 ELLser.close()
 ARDser.close()
 
