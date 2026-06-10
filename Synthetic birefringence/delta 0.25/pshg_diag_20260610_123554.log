@@ -1,0 +1,19 @@
+    0.022  SESSION.START           log=D:\1_software\Experimental control software\Synthetic birefringence\delta 0.25\pshg_diag_20260610_123554.log  csv=D:\1_software\Experimental control software\Synthetic birefringence\delta 0.25\pshg_diag_20260610_123554.csv  file=delta_waves=0.250_fast_axis=75.xlsx  drain_stale=True
+    0.067  ELL.QUERY               cmd=0in  reply='0IN0E1140051420211501016800023000\r\n'
+    0.163  ELL.QUERY               cmd=2in  reply='2IN0E1140064920211501016800023000\r\n'
+    0.691  ELL.QUERY               cmd=0ho  reply='0PO00000001\r\n'
+    1.251  ELL.QUERY               cmd=2ho  reply='2POFFFFFFFF\r\n'
+    1.283  ELL.QUERY               cmd=0gp  reply='0PO00000001\r\n'
+    1.363  ELL.QUERY               cmd=2gp  reply='2PO00000005\r\n'
+    2.372  LOOP.START            
+    3.386  FRAME.START             frame=1  hwp=37  qwp=62
+    3.387  ELL.TX                  addr=0  deg=37  hex=0000398E  cmd=0ma0000398E
+    3.651  ELL.RX                  addr=0  line=0PO0000398D  raw=b'0PO0000398D\r\n'
+    3.652  ELL.DONE                addr=0  pos=37.0  dt=0.263  lines=1  leftover=0
+    3.653  ELL.TX                  addr=2  deg=62  hex=00006072  cmd=2ma00006072
+    4.068  ELL.RX                  addr=2  line=2PO0000606F  raw=b'2PO0000606F\r\n'
+    4.071  ELL.DONE                addr=2  pos=61.99  dt=0.416  lines=1  leftover=0
+    4.483  ARD.TRIG                frame=1  attempt=1
+    4.547  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+    4.562  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.015
+    6.880  LOOP.END              
