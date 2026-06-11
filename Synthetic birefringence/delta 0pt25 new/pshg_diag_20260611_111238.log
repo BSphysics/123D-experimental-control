@@ -1,0 +1,191 @@
+    0.027  SESSION.START           log=D:\1_software\Experimental control software\Synthetic birefringence\delta 0pt25 new\pshg_diag_20260611_111238.log  csv=D:\1_software\Experimental control software\Synthetic birefringence\delta 0pt25 new\pshg_diag_20260611_111238.csv  file=delta_waves=0.250_fast_axis=65.xlsx  drain_stale=True
+    0.082  ELL.QUERY               cmd=0in  reply='0IN0E1140051420211501016800023000\r\n'
+    0.178  ELL.QUERY               cmd=2in  reply='2IN0E1140064920211501016800023000\r\n'
+    0.386  ELL.QUERY               cmd=0ho  reply='0POFFFFFFFF\r\n'
+    0.898  ELL.QUERY               cmd=2ho  reply='2PO00000002\r\n'
+    0.930  ELL.QUERY               cmd=0gp  reply='0POFFFFFFFF\r\n'
+    1.010  ELL.QUERY               cmd=2gp  reply='2PO00000000\r\n'
+    2.027  LOOP.START            
+    3.038  FRAME.START             frame=1  hwp=35  qwp=70
+    3.039  ELL.TX                  addr=0  deg=35  hex=00003672  cmd=0ma00003672
+    3.298  ELL.RX                  addr=0  line=0PO00003674  raw=b'0PO00003674\r\n'
+    3.302  ELL.DONE                addr=0  pos=35.01  dt=0.261  lines=1  leftover=0
+    3.308  ELL.TX                  addr=2  deg=70  hex=00006CE4  cmd=2ma00006CE4
+    3.890  ELL.RX                  addr=2  line=2PO00006CE3  raw=b'2PO00006CE3\r\n'
+    3.896  ELL.DONE                addr=2  pos=70.0  dt=0.583  lines=1  leftover=0
+    4.314  ARD.TRIG                frame=1  attempt=1
+    4.378  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+    4.394  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+    4.804  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.426
+    4.806  ARD.FRAME_DONE          frame=1  attempt=1  dt=0.428  leftover=0
+    4.807  FRAME.END               frame=1  t_total=1.769  t_hwp=0.266  t_qwp=0.594  t_trig=0.494  attempts=1  flags=ok
+    4.809  FRAME.START             frame=2  hwp=45  qwp=100
+    4.810  ELL.TX                  addr=0  deg=45  hex=00004600  cmd=0ma00004600
+    5.010  ELL.RX                  addr=0  line=0PO000045FE  raw=b'0PO000045FE\r\n'
+    5.012  ELL.DONE                addr=0  pos=44.99  dt=0.201  lines=1  leftover=0
+    5.013  ELL.TX                  addr=2  deg=100  hex=00009B8E  cmd=2ma00009B8E
+    5.298  ELL.RX                  addr=2  line=2PO00009B8D  raw=b'2PO00009B8D\r\n'
+    5.300  ELL.DONE                addr=2  pos=100.0  dt=0.285  lines=1  leftover=0
+    5.704  ARD.TRIG                frame=2  attempt=1
+    5.767  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+    5.783  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+    6.193  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.426
+    6.194  ARD.FRAME_DONE          frame=2  attempt=1  dt=0.427  leftover=0
+    6.195  FRAME.END               frame=2  t_total=1.386  t_hwp=0.202  t_qwp=0.288  t_trig=0.491  attempts=1  flags=ok
+    6.197  FRAME.START             frame=3  hwp=138  qwp=91
+    6.198  ELL.TX                  addr=0  deg=138  hex=0000D6AB  cmd=0ma0000D6AB
+    6.562  ELL.RX                  addr=0  line=0PO0000D6AC  raw=b'0PO0000D6AC\r\n'
+    6.567  ELL.DONE                addr=0  pos=138.0  dt=0.369  lines=1  leftover=0
+    6.573  ELL.TX                  addr=2  deg=91  hex=00008D8E  cmd=2ma00008D8E
+    6.819  ELL.RX                  addr=2  line=2PO00008D91  raw=b'2PO00008D91\r\n'
+    6.822  ELL.DONE                addr=2  pos=91.01  dt=0.245  lines=1  leftover=0
+    7.231  ARD.TRIG                frame=3  attempt=1
+    7.296  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.001
+    7.312  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+    7.732  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.437
+    7.734  ARD.FRAME_DONE          frame=3  attempt=1  dt=0.438  leftover=0
+    7.736  FRAME.END               frame=3  t_total=1.538  t_hwp=0.375  t_qwp=0.255  t_trig=0.504  attempts=1  flags=ok
+    7.738  FRAME.START             frame=4  hwp=36  qwp=68
+    7.740  ELL.TX                  addr=0  deg=36  hex=00003800  cmd=0ma00003800
+    8.051  ELL.RX                  addr=0  line=0PO00003802  raw=b'0PO00003802\r\n'
+    8.055  ELL.DONE                addr=0  pos=36.01  dt=0.313  lines=1  leftover=0
+    8.059  ELL.TX                  addr=2  deg=68  hex=000069C7  cmd=2ma000069C7
+    8.451  ELL.RX                  addr=2  line=2PO000069C6  raw=b'2PO000069C6\r\n'
+    8.455  ELL.DONE                addr=2  pos=68.0  dt=0.392  lines=1  leftover=0
+    8.873  ARD.TRIG                frame=4  attempt=1
+    8.937  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.001
+    8.952  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+    9.363  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.427
+    9.364  ARD.FRAME_DONE          frame=4  attempt=1  dt=0.428  leftover=0
+    9.366  FRAME.END               frame=4  t_total=1.627  t_hwp=0.319  t_qwp=0.403  t_trig=0.493  attempts=1  flags=ok
+    9.368  FRAME.START             frame=5  hwp=33  qwp=56
+    9.369  ELL.TX                  addr=0  deg=33  hex=00003355  cmd=0ma00003355
+    9.459  ELL.RX                  addr=0  line=0PO00003353  raw=b'0PO00003353\r\n'
+    9.460  ELL.DONE                addr=0  pos=32.99  dt=0.089  lines=1  leftover=0
+    9.461  ELL.TX                  addr=2  deg=56  hex=0000571C  cmd=2ma0000571C
+    9.715  ELL.RX                  addr=2  line=2PO0000571C  raw=b'2PO0000571C\r\n'
+    9.719  ELL.DONE                addr=2  pos=56.0  dt=0.257  lines=1  leftover=0
+   10.131  ARD.TRIG                frame=5  attempt=1
+   10.196  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   10.212  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   10.623  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.428
+   10.625  ARD.FRAME_DONE          frame=5  attempt=1  dt=0.429  leftover=0
+   10.625  FRAME.END               frame=5  t_total=1.257  t_hwp=0.092  t_qwp=0.261  t_trig=0.494  attempts=1  flags=ok
+   10.627  FRAME.START             frame=6  hwp=32  qwp=43
+   10.628  ELL.TX                  addr=0  deg=32  hex=000031C7  cmd=0ma000031C7
+   10.803  ELL.RX                  addr=0  line=0PO000031CA  raw=b'0PO000031CA\r\n'
+   10.804  ELL.DONE                addr=0  pos=32.01  dt=0.176  lines=1  leftover=0
+   10.805  ELL.TX                  addr=2  deg=43  hex=000042E4  cmd=2ma000042E4
+   10.963  ELL.RX                  addr=2  line=2PO000042E3  raw=b'2PO000042E3\r\n'
+   10.966  ELL.DONE                addr=2  pos=43.0  dt=0.159  lines=1  leftover=0
+   11.368  ARD.TRIG                frame=6  attempt=1
+   11.431  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   11.448  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   11.859  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.428
+   11.860  ARD.FRAME_DONE          frame=6  attempt=1  dt=0.429  leftover=0
+   11.861  FRAME.END               frame=6  t_total=1.234  t_hwp=0.178  t_qwp=0.163  t_trig=0.493  attempts=1  flags=ok
+   11.863  FRAME.START             frame=7  hwp=49  qwp=34
+   11.864  ELL.TX                  addr=0  deg=49  hex=00004C39  cmd=0ma00004C39
+   12.131  ELL.RX                  addr=0  line=0PO00004C38  raw=b'0PO00004C38\r\n'
+   12.132  ELL.DONE                addr=0  pos=49.0  dt=0.268  lines=1  leftover=0
+   12.133  ELL.TX                  addr=2  deg=34  hex=000034E4  cmd=2ma000034E4
+   12.579  ELL.RX                  addr=2  line=2PO000034E1  raw=b'2PO000034E1\r\n'
+   12.580  ELL.DONE                addr=2  pos=33.99  dt=0.447  lines=1  leftover=0
+   12.981  ARD.TRIG                frame=7  attempt=1
+   13.045  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   13.061  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   13.471  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.427
+   13.475  ARD.FRAME_DONE          frame=7  attempt=1  dt=0.43  leftover=0
+   13.479  FRAME.END               frame=7  t_total=1.616  t_hwp=0.269  t_qwp=0.448  t_trig=0.498  attempts=1  flags=ok
+   13.487  FRAME.START             frame=8  hwp=144  qwp=26
+   13.491  ELL.TX                  addr=0  deg=144  hex=0000E000  cmd=0ma0000E000
+   14.036  ELL.RX                  addr=0  line=0PO0000E000  raw=b'0PO0000E000\r\n'
+   14.040  ELL.DONE                addr=0  pos=144.0  dt=0.545  lines=1  leftover=0
+   14.044  ELL.TX                  addr=2  deg=26  hex=00002872  cmd=2ma00002872
+   14.388  ELL.RX                  addr=2  line=2PO00002870  raw=b'2PO00002870\r\n'
+   14.392  ELL.DONE                addr=2  pos=26.0  dt=0.345  lines=1  leftover=0
+   14.803  ARD.TRIG                frame=8  attempt=1
+   14.867  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.001
+   14.882  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   15.294  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.428
+   15.298  ARD.FRAME_DONE          frame=8  attempt=1  dt=0.431  leftover=0
+   15.301  FRAME.END               frame=8  t_total=1.815  t_hwp=0.553  t_qwp=0.352  t_trig=0.498  attempts=1  flags=ok
+   15.308  FRAME.START             frame=9  hwp=168  qwp=19
+   15.310  ELL.TX                  addr=0  deg=168  hex=00010555  cmd=0ma00010555
+   15.572  ELL.RX                  addr=0  line=0PO00010555  raw=b'0PO00010555\r\n'
+   15.576  ELL.DONE                addr=0  pos=168.0  dt=0.264  lines=1  leftover=0
+   15.581  ELL.TX                  addr=2  deg=19  hex=00001D8E  cmd=2ma00001D8E
+   15.892  ELL.RX                  addr=2  line=2PO00001D8C  raw=b'2PO00001D8C\r\n'
+   15.897  ELL.DONE                addr=2  pos=18.99  dt=0.312  lines=1  leftover=0
+   16.307  ARD.TRIG                frame=9  attempt=1
+   16.370  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.001
+   16.386  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   16.797  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.427
+   16.799  ARD.FRAME_DONE          frame=9  attempt=1  dt=0.43  leftover=0
+   16.801  FRAME.END               frame=9  t_total=1.493  t_hwp=0.271  t_qwp=0.32  t_trig=0.494  attempts=1  flags=ok
+   16.805  FRAME.START             frame=10  hwp=145  qwp=15
+   16.807  ELL.TX                  addr=0  deg=145  hex=0000E18E  cmd=0ma0000E18E
+   17.236  ELL.RX                  addr=0  line=0PO0000E18B  raw=b'0PO0000E18B\r\n'
+   17.239  ELL.DONE                addr=0  pos=144.99  dt=0.432  lines=1  leftover=0
+   17.243  ELL.TX                  addr=2  deg=15  hex=00001755  cmd=2ma00001755
+   17.379  ELL.RX                  addr=2  line=2PO00001752  raw=b'2PO00001752\r\n'
+   17.382  ELL.DONE                addr=2  pos=14.99  dt=0.134  lines=1  leftover=0
+   17.793  ARD.TRIG                frame=10  attempt=1
+   17.856  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.001
+   17.870  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.015
+   18.284  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.43
+   18.285  ARD.FRAME_DONE          frame=10  attempt=1  dt=0.431  leftover=0
+   18.286  FRAME.END               frame=10  t_total=1.48  t_hwp=0.436  t_qwp=0.141  t_trig=0.493  attempts=1  flags=ok
+   18.288  FRAME.START             frame=11  hwp=112  qwp=45
+   18.289  ELL.TX                  addr=0  deg=112  hex=0000AE39  cmd=0ma0000AE39
+   18.707  ELL.RX                  addr=0  line=0PO0000AE3C  raw=b'0PO0000AE3C\r\n'
+   18.708  ELL.DONE                addr=0  pos=112.01  dt=0.419  lines=1  leftover=0
+   18.709  ELL.TX                  addr=2  deg=45  hex=00004600  cmd=2ma00004600
+   18.979  ELL.RX                  addr=2  line=2PO00004603  raw=b'2PO00004603\r\n'
+   18.980  ELL.DONE                addr=2  pos=45.01  dt=0.271  lines=1  leftover=0
+   19.395  ARD.TRIG                frame=11  attempt=1
+   19.458  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   19.474  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   19.889  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.43
+   19.891  ARD.FRAME_DONE          frame=11  attempt=1  dt=0.432  leftover=0
+   19.893  FRAME.END               frame=11  t_total=1.605  t_hwp=0.42  t_qwp=0.272  t_trig=0.497  attempts=1  flags=ok
+   19.895  FRAME.START             frame=12  hwp=50  qwp=1
+   19.896  ELL.TX                  addr=0  deg=50  hex=00004DC7  cmd=0ma00004DC7
+   20.131  ELL.RX                  addr=0  line=0PO00004DCA  raw=b'0PO00004DCA\r\n'
+   20.133  ELL.DONE                addr=0  pos=50.01  dt=0.236  lines=1  leftover=0
+   20.134  ELL.TX                  addr=2  deg=1  hex=0000018E  cmd=2ma0000018E
+   20.484  ELL.RX                  addr=2  line=2PO00000191  raw=b'2PO00000191\r\n'
+   20.488  ELL.DONE                addr=2  pos=1.01  dt=0.353  lines=1  leftover=0
+   20.899  ARD.TRIG                frame=12  attempt=1
+   20.963  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   20.979  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   21.389  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.426
+   21.390  ARD.FRAME_DONE          frame=12  attempt=1  dt=0.427  leftover=0
+   21.391  FRAME.END               frame=12  t_total=1.496  t_hwp=0.238  t_qwp=0.358  t_trig=0.492  attempts=1  flags=ok
+   21.393  FRAME.START             frame=13  hwp=35  qwp=70
+   21.395  ELL.TX                  addr=0  deg=35  hex=00003672  cmd=0ma00003672
+   21.540  ELL.RX                  addr=0  line=0PO00003670  raw=b'0PO00003670\r\n'
+   21.541  ELL.DONE                addr=0  pos=35.0  dt=0.145  lines=1  leftover=0
+   21.542  ELL.TX                  addr=2  deg=70  hex=00006CE4  cmd=2ma00006CE4
+   22.084  ELL.RX                  addr=2  line=2PO00006CE6  raw=b'2PO00006CE6\r\n'
+   22.087  ELL.DONE                addr=2  pos=70.01  dt=0.544  lines=1  leftover=0
+   22.490  ARD.TRIG                frame=13  attempt=1
+   22.554  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   22.571  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   22.982  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.427
+   22.983  ARD.FRAME_DONE          frame=13  attempt=1  dt=0.428  leftover=0
+   22.985  FRAME.END               frame=13  t_total=1.591  t_hwp=0.147  t_qwp=0.548  t_trig=0.494  attempts=1  flags=ok
+   22.986  FRAME.START             frame=14  hwp=39  qwp=78
+   22.988  ELL.TX                  addr=0  deg=39  hex=00003CAB  cmd=0ma00003CAB
+   23.092  ELL.RX                  addr=0  line=0PO00003CA8  raw=b'0PO00003CA8\r\n'
+   23.093  ELL.DONE                addr=0  pos=38.99  dt=0.104  lines=1  leftover=0
+   23.094  ELL.TX                  addr=2  deg=78  hex=00007955  cmd=2ma00007955
+   23.348  ELL.RX                  addr=2  line=2PO00007952  raw=b'2PO00007952\r\n'
+   23.351  ELL.DONE                addr=2  pos=77.99  dt=0.256  lines=1  leftover=0
+   23.756  ARD.TRIG                frame=14  attempt=1
+   23.820  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   23.836  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   24.243  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.423
+   24.245  ARD.FRAME_DONE          frame=14  attempt=1  dt=0.424  leftover=0
+   24.246  FRAME.END               frame=14  t_total=1.259  t_hwp=0.106  t_qwp=0.259  t_trig=0.49  attempts=1  flags=ok
+   24.248  LOOP.END              
