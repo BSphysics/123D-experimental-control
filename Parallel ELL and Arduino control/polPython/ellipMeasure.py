@@ -23,7 +23,7 @@ degrees = np.pi/180
 serialString = ""  # declare a string variable
 
 ELLser = serial.Serial(         # Open a serial connection to the ELL14. Note you can use Windows device manager to move the USB serial adapter to a different COM port if you need
-    port='COM7',
+    port='COM8',
     baudrate=9600,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
