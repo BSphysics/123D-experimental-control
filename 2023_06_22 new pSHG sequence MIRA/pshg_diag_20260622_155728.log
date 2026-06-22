@@ -1,0 +1,205 @@
+    0.111  SESSION.START           log=D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\pshg_diag_20260622_155728.log  csv=D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\pshg_diag_20260622_155728.csv  file=2023_06_22 new pSHG sequence MIRA.xlsx  drain_stale=True
+    0.156  ELL.QUERY               cmd=0in  reply='0IN0E1140051420211501016800023000\r\n'
+    0.252  ELL.QUERY               cmd=2in  reply='2IN0E1140064920211501016800023000\r\n'
+    0.684  ELL.QUERY               cmd=0ho  reply='0POFFFFFFFD\r\n'
+    1.452  ELL.QUERY               cmd=2ho  reply='2PO00000000\r\n'
+    1.484  ELL.QUERY               cmd=0gp  reply='0POFFFFFFFD\r\n'
+    1.564  ELL.QUERY               cmd=2gp  reply='2PO00000000\r\n'
+    2.584  LOOP.START            
+    3.587  FRAME.START             frame=1  hwp=20  qwp=155
+    3.587  ELL.TX                  addr=0  deg=20  hex=00001F1C  cmd=0ma00001F1C
+    3.772  ELL.RX                  addr=0  line=0PO00001F19  raw=b'0PO00001F19\r\n'
+    3.774  ELL.DONE                addr=0  pos=19.99  dt=0.185  lines=1  leftover=0
+    3.774  ELL.TX                  addr=2  deg=155  hex=0000F11C  cmd=2ma0000F11C
+    4.349  ELL.RX                  addr=2  line=2PO0000F119  raw=b'2PO0000F119\r\n'
+    4.352  ELL.DONE                addr=2  pos=154.99  dt=0.576  lines=1  leftover=0
+    4.756  ARD.STALE_PRE_TRIG      frame=1  attempt=1  n=1094  data=b'RAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRA'
+    4.757  ARD.TRIG                frame=1  attempt=1
+    4.819  ARD.RX                  msg=ME_DONE  raw=b'ME_DONE\r\n'  t=0.0
+    4.835  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.016
+    4.836  ARD.FRAME_DONE          frame=1  attempt=1  dt=0.017  leftover=58
+    4.837  ARD.EXTRA_DONE          frame=1  n=58
+    4.838  FRAME.END               frame=1  t_total=1.251  t_hwp=0.187  t_qwp=0.579  t_trig=0.082  attempts=1  flags=ok
+    4.839  FRAME.START             frame=2  hwp=18  qwp=143
+    4.840  ELL.TX                  addr=0  deg=18  hex=00001C00  cmd=0ma00001C00
+    4.973  ELL.RX                  addr=0  line=0PO00001C02  raw=b'0PO00001C02\r\n'
+    4.977  ELL.DONE                addr=0  pos=18.01  dt=0.136  lines=1  leftover=0
+    4.980  ELL.TX                  addr=2  deg=143  hex=0000DE72  cmd=2ma0000DE72
+    5.293  ELL.RX                  addr=2  line=2PO0000DE70  raw=b'2PO0000DE70\r\n'
+    5.294  ELL.DONE                addr=2  pos=143.0  dt=0.311  lines=1  leftover=0
+    5.707  ARD.STALE_PRE_TRIG      frame=2  attempt=1  n=854  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nTRIGGERED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DO'
+    5.708  ARD.TRIG                frame=2  attempt=1
+    5.771  ARD.RX                  msg=NE  raw=b'NE\r\n'  t=0.0
+    5.787  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.016
+    5.788  ARD.FRAME_DONE          frame=2  attempt=1  dt=0.017  leftover=63
+    5.789  ARD.EXTRA_DONE          frame=2  n=63
+    5.790  FRAME.END               frame=2  t_total=0.95  t_hwp=0.14  t_qwp=0.314  t_trig=0.083  attempts=1  flags=ok
+    5.791  FRAME.START             frame=3  hwp=27  qwp=138
+    5.792  ELL.TX                  addr=0  deg=27  hex=00002A00  cmd=0ma00002A00
+    6.076  ELL.RX                  addr=0  line=0PO00002A00  raw=b'0PO00002A00\r\n'
+    6.078  ELL.DONE                addr=0  pos=27.0  dt=0.285  lines=1  leftover=0
+    6.079  ELL.TX                  addr=2  deg=138  hex=0000D6AB  cmd=2ma0000D6AB
+    6.205  ELL.RX                  addr=2  line=2PO0000D6A8  raw=b'2PO0000D6A8\r\n'
+    6.206  ELL.DONE                addr=2  pos=137.99  dt=0.126  lines=1  leftover=0
+    6.607  ARD.STALE_PRE_TRIG      frame=3  attempt=1  n=722  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nTRIGGERED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DO'
+    6.608  ARD.TRIG                frame=3  attempt=1
+    6.671  ARD.RX                  msg=NE  raw=b'NE\r\n'  t=0.0
+    6.687  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.016
+    6.688  ARD.FRAME_DONE          frame=3  attempt=1  dt=0.017  leftover=63
+    6.689  ARD.EXTRA_DONE          frame=3  n=63
+    6.690  FRAME.END               frame=3  t_total=0.899  t_hwp=0.286  t_qwp=0.128  t_trig=0.083  attempts=1  flags=ok
+    6.692  FRAME.START             frame=4  hwp=40  qwp=143
+    6.693  ELL.TX                  addr=0  deg=40  hex=00003E39  cmd=0ma00003E39
+    6.877  ELL.RX                  addr=0  line=0PO00003E3C  raw=b'0PO00003E3C\r\n'
+    6.878  ELL.DONE                addr=0  pos=40.01  dt=0.184  lines=1  leftover=0
+    6.879  ELL.TX                  addr=2  deg=143  hex=0000DE72  cmd=2ma0000DE72
+    7.005  ELL.RX                  addr=2  line=2PO0000DE71  raw=b'2PO0000DE71\r\n'
+    7.007  ELL.DONE                addr=2  pos=143.0  dt=0.127  lines=1  leftover=0
+    7.415  ARD.STALE_PRE_TRIG      frame=4  attempt=1  n=752  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nTRIGGERED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFR'
+    7.416  ARD.TRIG                frame=4  attempt=1
+    7.479  ARD.RX                  msg=AME_DONE  raw=b'AME_DONE\r\n'  t=0.0
+    7.495  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.016
+    7.511  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.032
+    7.513  ARD.FRAME_DONE          frame=4  attempt=1  dt=0.034  leftover=59
+    7.515  ARD.EXTRA_DONE          frame=4  n=59
+    7.518  FRAME.END               frame=4  t_total=0.827  t_hwp=0.187  t_qwp=0.13  t_trig=0.104  attempts=1  flags=ok
+    7.523  FRAME.START             frame=5  hwp=55  qwp=155
+    7.524  ELL.TX                  addr=0  deg=55  hex=0000558E  cmd=0ma0000558E
+    7.677  ELL.RX                  addr=0  line=0PO0000558C  raw=b'0PO0000558C\r\n'
+    7.678  ELL.DONE                addr=0  pos=54.99  dt=0.152  lines=1  leftover=0
+    7.679  ELL.TX                  addr=2  deg=155  hex=0000F11C  cmd=2ma0000F11C
+    7.949  ELL.RX                  addr=2  line=2PO0000F11E  raw=b'2PO0000F11E\r\n'
+    7.955  ELL.DONE                addr=2  pos=155.0  dt=0.275  lines=1  leftover=0
+    8.371  ARD.STALE_PRE_TRIG      frame=5  attempt=1  n=799  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\n'
+    8.372  ARD.TRIG                frame=5  attempt=1
+    8.435  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+    8.451  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.016
+    8.452  ARD.FRAME_DONE          frame=5  attempt=1  dt=0.017  leftover=47
+    8.453  ARD.EXTRA_DONE          frame=5  n=47
+    8.454  FRAME.END               frame=5  t_total=0.932  t_hwp=0.154  t_qwp=0.28  t_trig=0.084  attempts=1  flags=ok
+    8.456  FRAME.START             frame=6  hwp=67  qwp=168
+    8.457  ELL.TX                  addr=0  deg=67  hex=00006839  cmd=0ma00006839
+    8.797  ELL.RX                  addr=0  line=0PO00006839  raw=b'0PO00006839\r\n'
+    8.798  ELL.DONE                addr=0  pos=67.0  dt=0.339  lines=1  leftover=0
+    8.798  ELL.TX                  addr=2  deg=168  hex=00010555  cmd=2ma00010555
+    9.037  ELL.RX                  addr=2  line=2PO00010553  raw=b'2PO00010553\r\n'
+    9.039  ELL.DONE                addr=2  pos=167.99  dt=0.24  lines=1  leftover=0
+    9.445  ARD.STALE_PRE_TRIG      frame=6  attempt=1  n=921  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFR'
+    9.447  ARD.TRIG                frame=6  attempt=1
+    9.508  ARD.RX                  msg=AME_DONE  raw=b'AME_DONE\r\n'  t=0.0
+    9.524  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.016
+    9.525  ARD.FRAME_DONE          frame=6  attempt=1  dt=0.017  leftover=57
+    9.526  ARD.EXTRA_DONE          frame=6  n=57
+    9.527  FRAME.END               frame=6  t_total=1.071  t_hwp=0.342  t_qwp=0.244  t_trig=0.082  attempts=1  flags=ok
+    9.529  FRAME.START             frame=7  hwp=78  qwp=178
+    9.530  ELL.TX                  addr=0  deg=78  hex=00007955  cmd=0ma00007955
+    9.773  ELL.RX                  addr=0  line=0PO00007958  raw=b'0PO00007958\r\n'
+    9.774  ELL.DONE                addr=0  pos=78.01  dt=0.244  lines=1  leftover=0
+    9.775  ELL.TX                  addr=2  deg=178  hex=000114E4  cmd=2ma000114E4
+   10.013  ELL.RX                  addr=2  line=2PO000114E5  raw=b'2PO000114E5\r\n'
+   10.016  ELL.DONE                addr=2  pos=178.0  dt=0.24  lines=1  leftover=0
+   10.422  ARD.STALE_PRE_TRIG      frame=7  attempt=1  n=916  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nTRIGGERED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE'
+   10.423  ARD.TRIG                frame=7  attempt=1
+   10.483  ARD.RX                  msg=  raw=b'\r\n'  t=0.0
+   10.498  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.015
+   10.499  ARD.FRAME_DONE          frame=7  attempt=1  dt=0.016  leftover=61
+   10.500  ARD.EXTRA_DONE          frame=7  n=61
+   10.501  FRAME.END               frame=7  t_total=0.972  t_hwp=0.245  t_qwp=0.243  t_trig=0.08  attempts=1  flags=ok
+   10.503  FRAME.START             frame=8  hwp=91  qwp=186
+   10.504  ELL.TX                  addr=0  deg=91  hex=00008D8E  cmd=0ma00008D8E
+   10.733  ELL.RX                  addr=0  line=0PO00008D8E  raw=b'0PO00008D8E\r\n'
+   10.734  ELL.DONE                addr=0  pos=91.0  dt=0.229  lines=1  leftover=0
+   10.735  ELL.TX                  addr=2  deg=186  hex=00012155  cmd=2ma00012155
+   11.085  ELL.RX                  addr=2  line=2PO00012153  raw=b'2PO00012153\r\n'
+   11.088  ELL.DONE                addr=2  pos=185.99  dt=0.352  lines=1  leftover=0
+   11.504  ARD.STALE_PRE_TRIG      frame=8  attempt=1  n=1030  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nTRIGGERED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAM'
+   11.505  ARD.TRIG                frame=8  attempt=1
+   11.566  ARD.RX                  msg=E_DONE  raw=b'E_DONE\r\n'  t=0.0
+   11.583  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.017
+   11.587  ARD.FRAME_DONE          frame=8  attempt=1  dt=0.021  leftover=59
+   11.591  ARD.EXTRA_DONE          frame=8  n=59
+   11.595  FRAME.END               frame=8  t_total=1.092  t_hwp=0.231  t_qwp=0.356  t_trig=0.091  attempts=1  flags=ok
+   11.603  FRAME.START             frame=9  hwp=102  qwp=186
+   11.607  ELL.TX                  addr=0  deg=102  hex=00009EAB  cmd=0ma00009EAB
+   11.885  ELL.RX                  addr=0  line=0PO00009EAB  raw=b'0PO00009EAB\r\n'
+   11.886  ELL.DONE                addr=0  pos=102.0  dt=0.275  lines=1  leftover=0
+   11.887  ELL.TX                  addr=2  deg=186  hex=00012155  cmd=2ma00012155
+   11.965  ELL.RX                  addr=2  line=2PO00012155  raw=b'2PO00012155\r\n'
+   11.966  ELL.DONE                addr=2  pos=186.0  dt=0.079  lines=1  leftover=0
+   12.375  ARD.STALE_PRE_TRIG      frame=9  attempt=1  n=816  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nTRIGGERED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_'
+   12.376  ARD.TRIG                frame=9  attempt=1
+   12.439  ARD.RX                  msg=DONE  raw=b'DONE\r\n'  t=0.0
+   12.455  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.016
+   12.456  ARD.FRAME_DONE          frame=9  attempt=1  dt=0.017  leftover=60
+   12.457  ARD.EXTRA_DONE          frame=9  n=60
+   12.458  FRAME.END               frame=9  t_total=0.855  t_hwp=0.28  t_qwp=0.08  t_trig=0.083  attempts=1  flags=ok
+   12.460  FRAME.START             frame=10  hwp=106  qwp=178
+   12.461  ELL.TX                  addr=0  deg=106  hex=0000A4E4  cmd=0ma0000A4E4
+   12.669  ELL.RX                  addr=0  line=0PO0000A4E7  raw=b'0PO0000A4E7\r\n'
+   12.670  ELL.DONE                addr=0  pos=106.01  dt=0.207  lines=1  leftover=0
+   12.671  ELL.TX                  addr=2  deg=178  hex=000114E4  cmd=2ma000114E4
+   12.797  ELL.RX                  addr=2  line=2PO000114E6  raw=b'2PO000114E6\r\n'
+   12.798  ELL.DONE                addr=2  pos=178.01  dt=0.126  lines=1  leftover=0
+   13.213  ARD.STALE_PRE_TRIG      frame=10  attempt=1  n=790  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nTRIGGERED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAM'
+   13.214  ARD.TRIG                frame=10  attempt=1
+   13.277  ARD.RX                  msg=E_DONE  raw=b'E_DONE\r\n'  t=0.0
+   13.293  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.016
+   13.294  ARD.FRAME_DONE          frame=10  attempt=1  dt=0.017  leftover=58
+   13.295  ARD.EXTRA_DONE          frame=10  n=58
+   13.296  FRAME.END               frame=10  t_total=0.836  t_hwp=0.21  t_qwp=0.128  t_trig=0.083  attempts=1  flags=ok
+   13.298  FRAME.START             frame=11  hwp=106  qwp=167
+   13.299  ELL.TX                  addr=0  deg=106  hex=0000A4E4  cmd=0ma0000A4E4
+   13.341  ELL.RX                  addr=0  line=0PO0000A4E6  raw=b'0PO0000A4E6\r\n'
+   13.342  ELL.DONE                addr=0  pos=106.01  dt=0.043  lines=1  leftover=0
+   13.343  ELL.TX                  addr=2  deg=167  hex=000103C7  cmd=2ma000103C7
+   13.725  ELL.RX                  addr=2  line=2PO000103C8  raw=b'2PO000103C8\r\n'
+   13.727  ELL.DONE                addr=2  pos=167.0  dt=0.383  lines=1  leftover=0
+   14.140  ARD.STALE_PRE_TRIG      frame=11  attempt=1  n=870  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nTRIGGERED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\n'
+   14.142  ARD.TRIG                frame=11  attempt=1
+   14.203  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.0
+   14.205  ARD.FRAME_DONE          frame=11  attempt=1  dt=0.002  leftover=51
+   14.207  ARD.EXTRA_DONE          frame=11  n=51
+   14.209  FRAME.END               frame=11  t_total=0.911  t_hwp=0.044  t_qwp=0.385  t_trig=0.069  attempts=1  flags=ok
+   14.214  FRAME.START             frame=12  hwp=105  qwp=155
+   14.216  ELL.TX                  addr=0  deg=105  hex=0000A355  cmd=0ma0000A355
+   14.317  ELL.RX                  addr=0  line=0PO0000A357  raw=b'0PO0000A357\r\n'
+   14.318  ELL.DONE                addr=0  pos=105.0  dt=0.1  lines=1  leftover=0
+   14.319  ELL.TX                  addr=2  deg=155  hex=0000F11C  cmd=2ma0000F11C
+   14.654  ELL.RX                  addr=2  line=2PO0000F11D  raw=b'2PO0000F11D\r\n'
+   14.658  ELL.DONE                addr=2  pos=155.0  dt=0.337  lines=1  leftover=0
+   15.073  ARD.STALE_PRE_TRIG      frame=12  attempt=1  n=886  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nTRIGGERED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAM'
+   15.074  ARD.TRIG                frame=12  attempt=1
+   15.136  ARD.RX                  msg=E_DONE  raw=b'E_DONE\r\n'  t=0.0
+   15.151  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.015
+   15.154  ARD.FRAME_DONE          frame=12  attempt=1  dt=0.018  leftover=59
+   15.156  ARD.EXTRA_DONE          frame=12  n=59
+   15.158  FRAME.END               frame=12  t_total=0.944  t_hwp=0.102  t_qwp=0.343  t_trig=0.085  attempts=1  flags=ok
+   15.163  FRAME.START             frame=13  hwp=104  qwp=143
+   15.166  ELL.TX                  addr=0  deg=104  hex=0000A1C7  cmd=0ma0000A1C7
+   15.389  ELL.RX                  addr=0  line=0PO0000A1C5  raw=b'0PO0000A1C5\r\n'
+   15.390  ELL.DONE                addr=0  pos=103.99  dt=0.222  lines=1  leftover=0
+   15.391  ELL.TX                  addr=2  deg=143  hex=0000DE72  cmd=2ma0000DE72
+   15.645  ELL.RX                  addr=2  line=2PO0000DE74  raw=b'2PO0000DE74\r\n'
+   15.649  ELL.DONE                addr=2  pos=143.01  dt=0.257  lines=1  leftover=0
+   16.066  ARD.STALE_PRE_TRIG      frame=13  attempt=1  n=934  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nTRIGGERED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAM'
+   16.067  ARD.TRIG                frame=13  attempt=1
+   16.131  ARD.RX                  msg=E_DONE  raw=b'E_DONE\r\n'  t=0.0
+   16.146  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.016
+   16.148  ARD.FRAME_DONE          frame=13  attempt=1  dt=0.018  leftover=63
+   16.150  ARD.EXTRA_DONE          frame=13  n=63
+   16.151  FRAME.END               frame=13  t_total=0.989  t_hwp=0.225  t_qwp=0.264  t_trig=0.086  attempts=1  flags=ok
+   16.157  FRAME.START             frame=14  hwp=112  qwp=137
+   16.159  ELL.TX                  addr=0  deg=112  hex=0000AE39  cmd=0ma0000AE39
+   16.397  ELL.RX                  addr=0  line=0PO0000AE39  raw=b'0PO0000AE39\r\n'
+   16.398  ELL.DONE                addr=0  pos=112.0  dt=0.236  lines=1  leftover=0
+   16.399  ELL.TX                  addr=2  deg=137  hex=0000D51C  cmd=2ma0000D51C
+   16.653  ELL.RX                  addr=2  line=2PO0000D51F  raw=b'2PO0000D51F\r\n'
+   16.654  ELL.DONE                addr=2  pos=137.01  dt=0.254  lines=1  leftover=0
+   17.066  ARD.STALE_PRE_TRIG      frame=14  attempt=1  n=946  data=b'FRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nTRIGGERED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nARMED\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAME_DONE\r\nFRAM'
+   17.067  ARD.TRIG                frame=14  attempt=1
+   17.128  ARD.RX                  msg=E_DONE  raw=b'E_DONE\r\n'  t=0.0
+   17.144  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.016
+   17.145  ARD.FRAME_DONE          frame=14  attempt=1  dt=0.017  leftover=54
+   17.146  ARD.EXTRA_DONE          frame=14  n=54
+   17.147  FRAME.END               frame=14  t_total=0.99  t_hwp=0.241  t_qwp=0.256  t_trig=0.081  attempts=1  flags=ok
+   17.149  LOOP.END              

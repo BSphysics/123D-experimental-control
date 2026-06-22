@@ -217,7 +217,7 @@ for HWPangleIDX in range(0,len(HWPArray)):
     HWPMoveArray.append(abMove)
     
 # Create the QWP position  array here
-QWPArray = np.arange(0,101,5)
+QWPArray = np.arange(0,141,5)
 QWPMoveArray=[]
 for QWPangleIDX in range(0,len(QWPArray)):   
     QWPdeg = int(QWPArray[QWPangleIDX])    

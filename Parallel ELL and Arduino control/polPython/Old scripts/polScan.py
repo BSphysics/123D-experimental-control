@@ -25,10 +25,12 @@ sys.path.append(os.path.join(scriptDir,"functions" ))
 from setConstantPolarisation import setPol
 from matplotlib import patches
 
-# calibrationFile = r'D:\!User files\Ben\2023\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx'
-calibrationFile = r'D:\!User files\Ben\2023\2023_12_07 new MAI TAI pSHG acquisition sequence\2023_12_07 new MAI TAI pSHG acquisition sequence.xlsx'
-# calibrationFile = r'D:\!User files\Ben\2024\Polarisation testing\pSHG sequence 30 pc ellip 15 deg steps.xlsx'
-# calibrationFile = r'D:\!User files\Ben\2023\2023_06_22 new pSHG sequence MIRA\HWP and QWP sequence MIRA.xlsx'
+
+
+calibrationFile = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx' 
+# calibrationFile = r'D:\1_software\Experimental control software\Synthetic birefringence\rotating_linear_pol.xlsx' 
+# calibrationFile = r'D:\1_software\Experimental control software\Synthetic birefringence\Fast axis 60\delta_waves=0.15_fast_axis=60.xlsx' 
+
 degrees = np.pi/180
 serialString = ""  # declare a string variable
 
@@ -37,6 +39,9 @@ polEllipseAngle = []
 expectedEllipseAngles = []
 Emaxs = []
 Emins = []
+fitParams   = []   # [Emax, Emin, alpha, offset] per step
+fitCovs     = []   # full 4x4 covariance per step
+rawScans    = []   # (polariserAngles, powers) per step, for offline refitting
 
 import pandas as pd
 dfHWP = pd.read_excel(calibrationFile, usecols='C')
@@ -45,10 +50,33 @@ dfLPA = pd.read_excel(calibrationFile, usecols='E')
 
 from datetime import datetime
 today = datetime.today()
-datestamp = str(today.year)+ '_' + str(today.month)+ '_' + str(today.day)+ '_' + str(today.hour).zfill(2) + str(today.minute).zfill(2)
-saveDir = r'D:\!User files\Ben\2024\Polarisation measurements' + r'\ ' + datestamp
+
+# Folder for all measurements taken today
+date_folder = (
+    f"Polarisation measurements "
+    f"{today.year}_{today.month:02d}_{today.day:02d}"
+)
+
+# Subfolder for this specific run
+time_folder = (
+    f"{today.hour:02d}{today.minute:02d}"
+    f"__PolScan data" + " using " + os.path.splitext(os.path.basename(calibrationFile))[0]
+)
+
+base_dir = Path(r"D:\2_user_data\Ben")
+
+# Daily folder
+daily_path = base_dir / date_folder
+daily_path.mkdir(parents=True, exist_ok=True)
+
+# Run-specific folder
+data_path = daily_path / time_folder
+data_path.mkdir(exist_ok=True)
+
+saveDir = str(data_path)
 
 data_path = Path(saveDir)
+
 if not os.path.exists(data_path):
     os.mkdir(data_path)
     
@@ -72,7 +100,7 @@ for polStepNumber in range(0,n):
     expectedEllipseAngles.append(expectedEllipseAngle)
     
     ELLser = serial.Serial(         # Open a serial connection to the ELL14. Note you can use Windows device manager to move the USB serial adapter to a different COM port if you need
-        port='COM7',
+        port='COM8',
         baudrate=9600,
         parity=serial.PARITY_NONE,
         stopbits=serial.STOPBITS_ONE,
@@ -186,6 +214,10 @@ for polStepNumber in range(0,n):
     
     # popt, pcov = curve_fit(model_f, polariserAngles, powers, bounds = ([0,0,0,0],[5,5,2*np.pi,0.01]))
     popt, pcov = curve_fit(model_f, polariserAngles, powers, bounds = ([0,0,0,0] , [np.max(powers)*1.5 , np.min(powers)*1.5+1e-2, 1*np.pi, 0.01]))
+
+    fitParams.append(popt.copy())
+    fitCovs.append(pcov.copy())
+    rawScans.append((np.asarray(polariserAngles, dtype=float), np.asarray(powers, dtype=float)))
     
     Emax, Emin, alpha, offset = popt
     
@@ -194,7 +226,7 @@ for polStepNumber in range(0,n):
     
     fittingAngles = np.arange(0,180,1)
     plt.plot(fittingAngles,model_f(fittingAngles, Emax, Emin, alpha, offset),'--b')
-    
+    plt.ylim(0,np.max(powers)*1.1)
     print('\n Ellipse semi major axis angle = ' + str(np.round(alpha*180/np.pi)) + ' degrees \n')
         
     # fig = plt.figure()
@@ -228,7 +260,7 @@ for polStepNumber in range(0,n):
     
     data_path = saveDir + foldername
     # plt.savefig(data_path + '/HWP = ' + str(hwp) + '  QWP = ' + str(qwp) + ' fit and ellipse.png')
-    plt.savefig(saveDir + '/HWP = ' + str(hwp).zfill(3) + '  QWP = ' + str(qwp).zfill(3) + ' fit and ellipse.png')
+    plt.savefig(saveDir + '/' + str(polStepNumber) + '__HWP = ' + str(hwp).zfill(3) + '  QWP = ' + str(qwp).zfill(3) + ' fit and ellipse.png')
     
     #%%
     
@@ -244,18 +276,25 @@ for polStepNumber in range(0,n):
     
     ellipAngle = alpha*180/np.pi
     polEllipseAngle.append(ellipAngle)
-#%%
+#%%  SAVE BLOCK
 plt.close('all')
 plt.figure()
 plt.plot(np.asarray(percentageEllipticity), 'ro')
 plt.title('Percentage Ellipticity')
 plt.savefig(saveDir + '/Percentage Ellipticity.png')
+np.save(saveDir + '/Percentage Ellipticity', percentageEllipticity)
 
 plt.figure()
 plt.plot(polEllipseAngle - np.asarray(expectedEllipseAngles) %90, 'go')
 plt.title('Difference between expected vs measured ellipse angles')
+np.save(saveDir + '/alphas', polEllipseAngle)
+
+np.save(saveDir + '/fitParams', np.asarray(fitParams))          # shape (n, 4)
+np.save(saveDir + '/fitCovs',   np.asarray(fitCovs))            # shape (n, 4, 4)
+np.save(saveDir + '/expectedEllipseAngles', np.asarray(expectedEllipseAngles))
+np.savez(saveDir + '/rawScans', polariserAngles=np.asarray(polariserAngles, dtype=float), powers=np.asarray([p for (_, p) in rawScans], dtype=float))  # (n, n_angles)
 #%%
-fig, axs = plt.subplots(2,7, figsize=(15, 6), facecolor='w', edgecolor='k')
+fig, axs = plt.subplots(2,7, figsize=(30, 12), facecolor='w', edgecolor='k')
 fig.subplots_adjust(hspace = .5, wspace=.1)
 axs = axs.ravel()
 
@@ -275,7 +314,7 @@ plt.suptitle('pSHG polarisation electric field ellipses' + 'Sequence used:' + ca
 plt.savefig(saveDir + '/pSHG polarisation E-field ellipses.png')
 
 #%%
-fig, axs = plt.subplots(2,7, figsize=(15, 6), facecolor='w', edgecolor='k')
+fig, axs = plt.subplots(2,7, figsize=(30, 12), facecolor='w', edgecolor='k')
 fig.subplots_adjust(hspace = .5, wspace=.1)
 axs = axs.ravel()
 
@@ -294,3 +333,16 @@ for idx in range(n):
 plt.suptitle('pSHG polarisation intensity ellipses\n' + 'Sequence used:' + calibrationFile )
 plt.savefig(saveDir + '/pSHG polarisation intensity ellipses.png')
 
+plt.close('all')
+
+import winsound  #Use to make a warning sound if there is a problem with the pSHG sequence 
+frequency = 1000  # Set Frequency (Hz)
+duration = 200  # Set Duration (mS)
+
+winsound.Beep(int(frequency/4), int(duration*2))
+winsound.Beep(int(frequency/4), int(duration*2))
+print(' \n **ACQUISITION FINISHED SUCCESSFULLY**')
+
+#%%
+path = os.path.realpath(saveDir)
+os.startfile(path)  

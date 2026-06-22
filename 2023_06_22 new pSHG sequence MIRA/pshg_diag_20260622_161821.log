@@ -1,0 +1,80 @@
+    0.021  SESSION.START           log=D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\pshg_diag_20260622_161821.log  csv=D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\pshg_diag_20260622_161821.csv  file=2023_06_22 new pSHG sequence MIRA.xlsx  drain_stale=True
+    0.066  ELL.QUERY               cmd=0in  reply='0IN0E1140051420211501016800023000\r\n'
+    0.162  ELL.QUERY               cmd=2in  reply='2IN0E1140064920211501016800023000\r\n'
+    0.674  ELL.QUERY               cmd=0ho  reply='0PO00000002\r\n'
+    1.346  ELL.QUERY               cmd=2ho  reply='2PO00000002\r\n'
+    1.378  ELL.QUERY               cmd=0gp  reply='0PO00000002\r\n'
+    1.442  ELL.QUERY               cmd=2gp  reply='2POFFFFFFFE\r\n'
+    2.458  LOOP.START            
+    3.463  FRAME.START             frame=1  hwp=20  qwp=155
+    3.465  ELL.TX                  addr=0  deg=20  hex=00001F1C  cmd=0ma00001F1C
+    3.650  ELL.RX                  addr=0  line=0PO00001F19  raw=b'0PO00001F19\r\n'
+    3.652  ELL.DONE                addr=0  pos=19.99  dt=0.186  lines=1  leftover=0
+    3.660  ELL.TX                  addr=2  deg=155  hex=0000F11C  cmd=2ma0000F11C
+    4.162  ELL.RX                  addr=2  line=2PO0000F119  raw=b'2PO0000F119\r\n'
+    4.164  ELL.DONE                addr=2  pos=154.99  dt=0.502  lines=1  leftover=0
+    4.573  ARD.TRIG                frame=1  attempt=1
+    4.637  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+    4.652  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.015
+    5.294  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.657
+    5.295  ARD.FRAME_DONE          frame=1  attempt=1  dt=0.658  leftover=0
+    5.297  FRAME.END               frame=1  t_total=1.834  t_hwp=0.196  t_qwp=0.504  t_trig=0.724  attempts=1  flags=ok
+    5.299  FRAME.START             frame=2  hwp=18  qwp=143
+    5.300  ELL.TX                  addr=0  deg=18  hex=00001C00  cmd=0ma00001C00
+    5.388  ELL.RX                  addr=0  line=0PO00001BFD  raw=b'0PO00001BFD\r\n'
+    5.390  ELL.DONE                addr=0  pos=17.99  dt=0.088  lines=1  leftover=0
+    5.391  ELL.TX                  addr=2  deg=143  hex=0000DE72  cmd=2ma0000DE72
+    5.715  ELL.RX                  addr=2  line=2PO0000DE73  raw=b'2PO0000DE73\r\n'
+    5.717  ELL.DONE                addr=2  pos=143.0  dt=0.324  lines=1  leftover=0
+    6.131  ARD.TRIG                frame=2  attempt=1
+    6.193  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+    6.208  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.015
+   16.199  ARD.TIMEOUT             waited=10.006
+   16.201  ARD.DROP                frame=2  attempt=1
+   16.615  ARD.TRIG                frame=2  attempt=2
+   16.678  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   16.694  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   26.680  ARD.TIMEOUT             waited=10.002
+   26.681  ARD.DROP                frame=2  attempt=2
+   27.091  ARD.STALE_PRE_TRIG      frame=2  attempt=3  n=12  data=b'FRAME_DONE\r\n'
+   27.094  ARD.TRIG                frame=2  attempt=3
+   27.155  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   27.171  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   37.160  ARD.TIMEOUT             waited=10.005
+   37.162  ARD.DROP                frame=2  attempt=3
+   37.566  ARD.TRIG                frame=2  attempt=4
+   37.627  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   37.642  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.015
+   47.627  ARD.TIMEOUT             waited=10.0
+   47.629  ARD.DROP                frame=2  attempt=4
+   48.653  BEEP_ERROR              msg=Frame 2 FAILED after 4 tries
+   48.655  FRAME.END               frame=2  t_total=43.356  t_hwp=0.091  t_qwp=0.326  t_trig=42.524  attempts=4  flags=SLOW,TRIG_FAIL,RETRY4
+   48.657  FRAME.START             frame=3  hwp=27  qwp=138
+   48.658  ELL.TX                  addr=0  deg=27  hex=00002A00  cmd=0ma00002A00
+   48.869  ELL.RX                  addr=0  line=0PO00002A00  raw=b'0PO00002A00\r\n'
+   48.870  ELL.DONE                addr=0  pos=27.0  dt=0.21  lines=1  leftover=0
+   48.871  ELL.TX                  addr=2  deg=138  hex=0000D6AB  cmd=2ma0000D6AB
+   48.997  ELL.RX                  addr=2  line=2PO0000D6AC  raw=b'2PO0000D6AC\r\n'
+   48.998  ELL.DONE                addr=2  pos=138.0  dt=0.126  lines=1  leftover=0
+   49.412  ARD.TRIG                frame=3  attempt=1
+   49.476  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   49.492  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   59.480  ARD.TIMEOUT             waited=10.004
+   59.481  ARD.DROP                frame=3  attempt=1
+   59.890  ARD.TRIG                frame=3  attempt=2
+   59.953  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   59.968  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   60.702  ARD.RX                  msg=FRAME_DONE  raw=b'FRAME_DONE\r\n'  t=0.75
+   60.703  ARD.FRAME_DONE          frame=3  attempt=2  dt=0.751  leftover=0
+   60.704  FRAME.END               frame=3  t_total=12.047  t_hwp=0.213  t_qwp=0.128  t_trig=11.292  attempts=2  flags=SLOW,RETRY2
+   60.707  FRAME.START             frame=4  hwp=40  qwp=143
+   60.708  ELL.TX                  addr=0  deg=40  hex=00003E39  cmd=0ma00003E39
+   60.854  ELL.RX                  addr=0  line=0PO00003E36  raw=b'0PO00003E36\r\n'
+   60.856  ELL.DONE                addr=0  pos=39.99  dt=0.147  lines=1  leftover=0
+   60.859  ELL.TX                  addr=2  deg=143  hex=0000DE72  cmd=2ma0000DE72
+   61.317  ELL.RX                  addr=2  line=2PO0000DE72  raw=b'2PO0000DE72\r\n'
+   61.319  ELL.DONE                addr=2  pos=143.0  dt=0.456  lines=1  leftover=0
+   61.727  ARD.TRIG                frame=4  attempt=1
+   61.788  ARD.RX                  msg=TRIGGERED  raw=b'TRIGGERED\r\n'  t=0.0
+   61.804  ARD.RX                  msg=ARMED  raw=b'ARMED\r\n'  t=0.016
+   67.671  LOOP.END              

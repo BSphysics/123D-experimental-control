@@ -1,0 +1,2 @@
+frame,hwp_cmd,qwp_cmd,hwp_pos,qwp_pos,hwp_err,qwp_err,t_hwp_s,t_qwp_s,t_trig_s,t_total_s,trig_attempts,flags
+1,28,71,28.0,71.0,0.0,0.0,0.229,0.384,0.722,1.749,1,ok
