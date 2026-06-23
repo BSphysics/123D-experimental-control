@@ -23,8 +23,8 @@ from synthetic_birefringence_v3 import find_retarder_settings, SyntheticRetarder
 # Settings
 # ---------------------------------------------------------------------------
 cal_dir       = '.'         # folder with the five .npy files (+ optional cache)
-delta_waves   = 0.40
-fast_axis_deg = 50          # re-sweep this now that handedness is calibrated —
+delta_waves   = 0.25
+fast_axis_deg = 110          # re-sweep this now that handedness is calibrated —
                             # the optimum should be broad, not a 5 deg spike.
 
 phi_start     = 43.6

@@ -59,6 +59,7 @@ from scipy.optimize import curve_fit
 from datetime import datetime
 
 calibrationFile = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx'
+# calibrationFile = r'D:\1_software\Experimental control software\Synthetic birefringence\0pt25 waves\delta_waves=0.250_fast_axis=70.xlsx'
 
 degrees = np.pi / 180
 serialString = ""

@@ -41,8 +41,8 @@ import pandas as pd
 from tqdm import tqdm
 
 # fullFileName = r'D:\1_software\Experimental control software\2023_06_22 new pSHG sequence MIRA\2023_06_22 new pSHG sequence MIRA.xlsx'
-# fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\0pt25 waves\delta_waves=0.250_fast_axis=40.xlsx'
-fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\FA 50 deg\delta_waves=0.350_fast_axis=50.xlsx'
+fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\0pt25 waves\delta_waves=0.250_fast_axis=110.xlsx'
+# fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\FA 50 deg\delta_waves=0.400_fast_axis=50.xlsx'
 # fullFileName = r'D:\1_software\Experimental control software\Synthetic birefringence\rotating_linear_pol.xlsx'
 
 dfHWP = pd.read_excel(fullFileName, usecols='C')
